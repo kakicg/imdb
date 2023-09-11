@@ -5,7 +5,8 @@ import { useSearchParams } from 'next/navigation'
 
 const NavbarItem = ({title,param}) => {
     const searchParams = useSearchParams()
-    const genre = searchParams.get('genre')
+    const genre = searchParams.get('genre') || 'FetchTrending'
+    console.log(`genre: ${genre} param: ${param}`)
   return (
     <div>
         <Link className={`m-4 hover:text-amber-600 font-semibold p-2 ${
